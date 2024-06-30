@@ -1,24 +1,24 @@
 /** @format */
 
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navber = () => {
   const links = (
     <>
       <li>
-        <NavLink className={({isActive}) => isActive ? 'bg-[#331A15] text-white' : ''} to={'/'}>Home</NavLink>
+        <Link className={({isActive}) => isActive ? 'text-white bg-white' : 'text-white font-semibold'} to={'/'}>Home</Link>
       </li>
       <li>
-        <NavLink className={({isActive}) => isActive ? 'bg-[#331A15] text-white' : ''}  to={'/service'}>Service</NavLink>
+        <Link className={({isActive}) => isActive ? 'text-white bg-white' : 'text-white font-semibold'}  to={'/service'}>Service</Link>
       </li>
       <li>
-        <NavLink className={({isActive}) => isActive ? 'bg-[#331A15] text-white' : ''}  to={'/addTea'}>Add Tea</NavLink>
+        <Link className={({isActive}) => isActive ? 'text-white bg-white' : 'text-white font-semibold'}  to={'/addTea'}>Add Tea</Link>
       </li>
     </>
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-[#331A15]">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -41,14 +41,14 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow">
               {links}
             </ul>
           </div>
-          <h2 className="text-4xl font-semibold ">Tea <span className="text-[#331A15]">Store</span></h2>
+          <h2 className="text-4xl text-white font-semibold ">Tea <span className="text-[#ad796e]">Store</span></h2>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu text-white menu-horizontal px-1">
             {links}
           </ul>
         </div>

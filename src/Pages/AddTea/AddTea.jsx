@@ -11,9 +11,9 @@ const AddTea = () => {
     const category = from.tea.value;
     const chef = from.chef.value;
     const quantity = from.quantity.value;
-    const tast = from.tast.value;
+    const price = from.price.value;
     const photo = from.photo.value;
-    const newTea = { name, supplier, category, chef, quantity, tast, photo };
+    const newTea = { name, supplier, category, chef, quantity, price, photo };
     fetch("http://localhost:5000/teas", {
       method: "POST",
       headers: {
@@ -117,12 +117,12 @@ const AddTea = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Tast</span>
+                  <span className="label-text">Price</span>
                 </label>
                 <input
                   type="text"
-                  name="tast"
-                  placeholder="Tast"
+                  name="price"
+                  placeholder="Price"
                   className="w-full input input-bordered"
                 />
               </div>

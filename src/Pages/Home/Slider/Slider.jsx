@@ -3,8 +3,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination } from 'swiper/modules';
 
+import 'swiper/css/navigation';
 // import styles bundle
 import "swiper/css/bundle";
 import { useEffect, useState } from "react";
@@ -20,15 +21,14 @@ const Slider = () => {
   return (
     <div className="">
       <Swiper
-        slidesPerView={"auto"}
         spaceBetween={30}
         pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination, Navigation]}
+            dynamicBullets: true,
+          }}
+        navigation={true} modules={[Navigation, Pagination]}
         className="mySwiper">
         {
-            teas.map(tea => (
+            teas?.slice(0,3).map(tea => (
                 <SwiperSlide key={tea._id}>
                     <div style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${tea.photo})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}} className="h-[80vh]">
                         <div className="h-full ">
